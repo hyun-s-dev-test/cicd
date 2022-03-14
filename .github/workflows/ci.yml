@@ -36,7 +36,7 @@ jobs:
           docker build -t spring-cicd .
           docker tag spring-cicd ${{secrets.USERNAME }}/spring-cicd:${GITHUB_SHA::7}
           docker push ${{ secrets.USERNAME }}/spring-cicd:${GITHUB_SHA::7}
-      -name: Deploy
+      - name: Deploy
         uses: appleboy/ssh-action@master
         with:
           host: 13.209.158.146
