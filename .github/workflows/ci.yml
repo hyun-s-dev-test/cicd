@@ -44,7 +44,6 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           envs: GITHUB_SHA
           script: |
-            sudo su
             docker pull ${{ secrets.USERNAME }}/spring-cicd:${GITHUB_SHA::7}
             docker tag ${{ secrets.USERNAME }}/spring-cicd:${GITHUB_SHA::7} spring-cicd
             docker stop server
